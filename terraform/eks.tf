@@ -23,7 +23,7 @@ module "eks" {
   version = "~> 20.0"
 
   cluster_name                    = local.name
-  cluster_version                 = "1.31"
+  cluster_version                 = "1.32"
   cluster_endpoint_public_access  = false
   cluster_endpoint_private_access = true
 
@@ -89,13 +89,13 @@ module "eks" {
 
     tws-demo-ng = {
       min_size     = 1
-      max_size     = 3
+      max_size     = 2
       desired_size = 1
 
-      instance_types = ["t3.large"]
+      instance_types = ["t3.medium"]
       capacity_type  = "SPOT"
 
-      disk_size                  = 35
+      disk_size                  = 30
       use_custom_launch_template = false # Important to apply disk size!
 
       remote_access = {
