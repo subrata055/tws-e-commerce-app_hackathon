@@ -77,7 +77,7 @@ module "eks" {
 
   eks_managed_node_group_defaults = {
 
-    instance_types = ["t3.large"]
+    instance_types = ["t3.medium"]
 
     attach_cluster_primary_security_group = true
 
@@ -89,7 +89,7 @@ module "eks" {
 
     tws-demo-ng = {
       min_size     = 1
-      max_size     = 2
+      max_size     = 3
       desired_size = 1
 
       instance_types = ["t3.medium"]
